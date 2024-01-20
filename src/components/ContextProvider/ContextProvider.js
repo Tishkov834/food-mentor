@@ -1,5 +1,5 @@
 import {
-  createContext, useContext, useMemo, useState,
+  createContext, useCallback, useContext, useMemo, useState,
 } from 'react';
 import PropTypes from 'prop-types';
 import { useNavigate } from 'react-router-dom';
@@ -19,12 +19,20 @@ function ContextProvider({ children }) {
 
   const [goalId, setGoal] = useState(null);
 
-  const chooseGoal = (id, path) => {
+  const [system, setSystem] = useState('imperial');
+
+  const [weight, setWeight] = useState(0);
+
+  const [height, setHeight] = useState(0);
+
+  const chooseGoal = useCallback((id, path) => {
     setGoal(id);
     navigate(path);
-  };
+  }, [navigate, setGoal]);
 
-  const contextValue = useMemo(() => ({ goalId, chooseGoal }), [goalId, chooseGoal]);
+  const contextValue = useMemo(() => ({
+    goalId, system, weight, height, setHeight, setWeight, setSystem, chooseGoal,
+  }), [goalId, system, weight, height, setHeight, setWeight, setSystem, chooseGoal]);
 
   return (
     <GoalContext.Provider value={contextValue}>
