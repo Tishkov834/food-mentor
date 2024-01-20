@@ -1,5 +1,5 @@
 import { useGoalContext } from '../../components/ContextProvider/ContextProvider';
-import StepLayout from '../../components/StepLayout';
+import StepLayout from '../../components/common/StepLayout';
 import StepOneButton from '../../components/StepOneButton';
 import loseWeight from '../../assets/icons/lose-weight.svg';
 import gainMuscle from '../../assets/icons/gain-muscle.svg';
