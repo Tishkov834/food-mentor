@@ -25,14 +25,16 @@ function ContextProvider({ children }) {
 
   const [height, setHeight] = useState(0);
 
+  const [selectedBehaviors, setSelectedBehaviors] = useState([]);
+
   const chooseGoal = useCallback((id, path) => {
     setGoal(id);
     navigate(path);
   }, [navigate, setGoal]);
 
   const contextValue = useMemo(() => ({
-    goalId, system, weight, height, setHeight, setWeight, setSystem, chooseGoal,
-  }), [goalId, system, weight, height, setHeight, setWeight, setSystem, chooseGoal]);
+    goalId, system, weight, height, selectedBehaviors, setSelectedBehaviors, setHeight, setWeight, setSystem, chooseGoal,
+  }), [goalId, system, weight, height, selectedBehaviors, setSelectedBehaviors, setHeight, setWeight, setSystem, chooseGoal]);
 
   return (
     <GoalContext.Provider value={contextValue}>
