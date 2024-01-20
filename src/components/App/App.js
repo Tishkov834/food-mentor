@@ -1,12 +1,16 @@
 import { BrowserRouter as Router } from 'react-router-dom';
 
-import AppContent from '../AppContent/AppContent';
+import AppContent from '../AppContent';
+import ContextProvider from '../ContextProvider';
 import './normalize.css';
+import './styles.scss';
 
 function App() {
   return (
     <Router>
-      <AppContent />
+      <ContextProvider>
+        <AppContent />
+      </ContextProvider>
     </Router>
   );
 }
