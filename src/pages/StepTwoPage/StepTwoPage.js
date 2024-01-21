@@ -40,13 +40,15 @@ function StepTwoPage() {
       <>
         <SwitchSystem system={system} changeSystem={changeSystem} />
         <Formik onSubmit={setParams} initialValues={initialValues} validationSchema={paramsSchema}>
-          <Form className="params-form-content">
-            <div className="params-form-content-inputs">
-              <Input type="number" name="height" placeholderText={`Height(${system === 'imperial' ? 'ft' : 'sm'})`} />
-              <Input type="number" name="weight" placeholderText={`Current Weight(${system === 'imperial' ? 'ft' : 'kg'})`} />
-            </div>
-            <Button type="submit" />
-          </Form>
+          {({ isValid }) => (
+            <Form className="params-form-content">
+              <div className="params-form-content-inputs">
+                <Input type="number" name="height" placeholderText={`Height(${system === 'imperial' ? 'ft' : 'sm'})`} />
+                <Input type="number" name="weight" placeholderText={`Current Weight(${system === 'imperial' ? 'ft' : 'kg'})`} />
+              </div>
+              <Button type="submit" isDisabled={!isValid} />
+            </Form>
+          )}
         </Formik>
       </>
     </StepLayout>
