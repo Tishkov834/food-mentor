@@ -1,0 +1,23 @@
+.step-one-title {
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 24px;
+  letter-spacing: 0.2px;
+  color: #2D3436;
+  text-align: center;
+}
+
+.step-one-list {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 15px 0;
+  padding: 0;
+  gap: 16px;
+
+  &-item {
+    list-style: none;
+    width: 172px;
+    height: 172px;
+  }
+}
