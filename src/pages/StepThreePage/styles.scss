@@ -1,0 +1,17 @@
+.step-three-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 129px;
+
+  .behaviors-list {
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+
+    &-item {
+      list-style: none;
+      width: 172px;
+    }
+  }
+}
