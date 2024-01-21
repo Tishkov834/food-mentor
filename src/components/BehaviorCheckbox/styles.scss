@@ -1,0 +1,40 @@
+.behavior-checkbox-input {
+  display: none;
+}
+
+.behavior-checkbox-content {
+  display: flex;
+  max-width: 172px;
+  height: 60px;
+  padding: 12px 24px 12px 15px;
+  align-items: center;
+  gap: 10px;
+  border-radius: 15px;
+  border: 1px solid #E1E1E1;
+  background: #FFF;
+  cursor: pointer;
+
+  &:hover {
+    background: linear-gradient(214deg, #C1C1C1 12.33%, #F1F1F1 69.93%);
+  }
+
+  &-img {
+    width: 30px;
+    height: 30px;
+  }
+
+  &-text {
+    width: 88px;
+    color: #2D3436;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 18px;
+    letter-spacing: 0.3px;
+    margin: 0;
+  }
+}
+
+.behavior-checkbox-content.active {
+  background: linear-gradient(214deg, #4CAF50 12.33%, #8BC34A 69.93%);
+}
