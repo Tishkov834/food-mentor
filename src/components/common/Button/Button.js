@@ -1,3 +1,4 @@
+import React from 'react';
 import PropTypes from 'prop-types';
 
 import './styles.scss';
@@ -6,7 +7,7 @@ function Button({
   title, type, onClick, isDisabled,
 }) {
   return (
-    <button className="button" type={type} onClick={onClick} disabled={isDisabled}>
+    <button className="button" type={type} onClick={onClick} disabled={isDisabled} data-testid="button">
       {title}
     </button>
   );
@@ -25,4 +26,5 @@ Button.defaultProps = {
   isDisabled: false,
   onClick: () => {},
 };
+
 export default Button;
